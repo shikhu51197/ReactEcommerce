@@ -3,6 +3,9 @@
 
      https://react-ecommerce-livid-nine.vercel.app/
      
+# Json-Server Deploy Link :-
+
+     https://ecoapp-json.onrender.com/products
 # Objective ❤️‍🔥:-
 
 Develop an interactive product catalog web application using React.js and associated libraries to showcase various products. The application allows users to browse through different categories of products, view details of each product, and includes animations/transitions for an enhanced user experience.
