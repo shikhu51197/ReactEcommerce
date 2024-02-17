@@ -33,6 +33,7 @@ const Login = () => {
       setUser(userData);
     }
     navigate("/");
+    window.location.reload()
   };
 
   const handleFormSubmission = (e) => {
@@ -56,7 +57,7 @@ const Login = () => {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
-        <Box display="flex" width="100%" mt={100}>
+        <Box display="flex" width="100%" mt={120}>
           <Box width="50%" mt="50px" p={10}>
             <Image src={logo1} borderRadius={10} width="100%" />
           </Box>

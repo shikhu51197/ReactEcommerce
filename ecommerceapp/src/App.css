@@ -1,6 +1,12 @@
 .App {
   text-align: center;
+  margin: 0;
+  background: url("https://tse1.mm.bing.net/th?id=OIP.3JZ12HY8MVZl842tPLxdzgHaEK&pid=Api&P=0&h=180") no-repeat center center fixed;
+  background-size: cover; 
+  font-family: 'sans-serif';
+  overflow: hidden;
 }
+
 
 .App-logo {
   height: 40vmin;

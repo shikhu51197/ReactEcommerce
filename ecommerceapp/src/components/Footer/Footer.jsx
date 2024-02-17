@@ -4,7 +4,7 @@ import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <Box bg="white"  bottom="0" w='100%'  p={2} mt={8}>
+    <Box bg="white"  bottom="0" w='100%'  p={5} mt={8}>
     <Center>
       <IconButton
         as={Link}

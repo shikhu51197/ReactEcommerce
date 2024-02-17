@@ -30,14 +30,14 @@ const WishlistPage = () => {
     <Box p={10} mx="auto" width="80%">
       <Image src={head} alt="head" width="20%" mx="auto" />
       {wishlistItems.length > 0 ? (
-        <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
+        <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" mt={10} gap={6}>
           {wishlistItems.map((item, index) => (
             <GridItem key={index}>
               <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={5}>
-                <Text fontWeight="bold" mb={2}>
+                <Text fontWeight="bold" mb={5}>
                   {item && item.title}
                 </Text>
-                <Text mb={2}>Price: ${item && item.price}</Text>
+                <Text mb={5}>Price: ${item && item.price}</Text>
                 <Button
                   size="sm"
                   colorScheme="red"
@@ -52,7 +52,6 @@ const WishlistPage = () => {
       ) : (
         <Box
           backgroundColor={"white"}
-          gap={2}
           width={"100%"}
           margin="auto"
           display="flex"
@@ -75,7 +74,7 @@ const WishlistPage = () => {
         </Box>
       )}
       {wishlistItems.length > 0 && (
-        <Button mt={4} colorScheme="red" onClick={handleClearWishlist}>
+        <Button mt={20} colorScheme="red" onClick={handleClearWishlist}>
           Clear Wishlist <AiOutlineDelete />
         </Button>
       )}

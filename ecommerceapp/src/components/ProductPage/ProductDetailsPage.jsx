@@ -28,7 +28,7 @@ import {
 } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
 const SingleProductPage = () => {
-  const { categoryId } = useParams();
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRelatedProduct, setSelectedRelatedProduct] = useState(null);
@@ -42,11 +42,11 @@ const SingleProductPage = () => {
     setIsModalOpen(false);
   };
   useEffect(() => {
-    fetch(`https://ecoapp-json.onrender.com/products/${categoryId}`)
+    fetch(`https://ecoapp-json.onrender.com/products/${id}`)
       .then((response) => response.json())
       .then((product) => setProduct(product))
       .catch((error) => console.error("Error fetching product data:", error));
-  }, [categoryId]);
+  }, [id]);
 
   const handleAddToCart = () => {
     const existingCartItems =
@@ -161,6 +161,7 @@ const SingleProductPage = () => {
                         overflow="hidden"
                         p={4}
                         _hover={{ shadow: "md" }}
+                        boxShadow="rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
                       >
                         <Image
                           src={relatedProduct.thumbnail}

@@ -12,7 +12,7 @@ import {
   Tooltip,
   Flex,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import head from "../../Image/Track delivery packages.png";
 const itemsPerPage = 6; // Number of items to display per page
 
@@ -22,32 +22,37 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState("popularity");
   const [currentPage, setCurrentPage] = useState(1);
-
+  const {id} = useParams()
+  console.log(id)
   useEffect(() => {
-    fetch("https://ecoapp-json.onrender.com/products")
+    fetch(`https://ecoapp-json.onrender.com/products?category=${id}`)
       .then((response) => response.json())
       .then((products) => {
         setProducts(products);
+      
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
-  const handleAddToCart = () => {
-    const existingCartItems =
-      JSON.parse(localStorage.getItem("cartItems")) || [];
-    const updatedCartItems = [...existingCartItems, product];
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-    alert("Product added to cart!");
+  const handleAddToCart = (singledata) => {
+    console.log("Add to cart" , singledata)
+      const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const updatedCartItems = [...existingCartItems, singledata];
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+      alert("Product added to cart!");
+  
+ 
+  
   };
 
-  const handleAddToWishlist = () => {
+  const handleAddToWishlist = (singledata) => {
     const existingWishlistItems =
       JSON.parse(localStorage.getItem("wishlistItems")) || [];
-    const updatedWishlistItems = [...existingWishlistItems, product];
+    const updatedWishlistItems = [...existingWishlistItems, singledata];
     localStorage.setItem("wishlistItems", JSON.stringify(updatedWishlistItems));
     alert("Product added to wishlist!");
   };
@@ -97,10 +102,10 @@ const CategoryPage = () => {
       </Flex>
 
       <HStack p={4} spacing={4} justify="center">
-        <Button onClick={() => handleSort("popularity")}>
+        <Button bg="#001440" color='white'  _hover={{ color: "black", bg: "#008AD8" }} onClick={() => handleSort("popularity")}>
           Sort by Popularity
         </Button>
-        <Button onClick={() => handleSort("price")}>Sort by Price</Button>
+        <Button bg="#001440" color='white' _hover={{ color: "black", bg: "#008AD8" }} onClick={() => handleSort("price")}>Sort by Price</Button>
       </HStack>
       {loading ? (
         <Spinner size="xl" mt={10} />
@@ -111,8 +116,8 @@ const CategoryPage = () => {
             gap={10}
             mt={8}
           >
-            {getPaginatedData().map((product) => (
-              <GridItem key={product.id}>
+            {getPaginatedData().map((el) => (
+              <GridItem key={el.id}>
                 <Box
                   borderWidth="1px"
                   borderRadius="lg"
@@ -121,10 +126,10 @@ const CategoryPage = () => {
                   _hover={{ shadow: "md" }}
                   textAlign="center"
                 >
-                  <Link to={`/category/${product.id}`}>
+                  <Link to={`/single/${el.id}`}>
                     <Image
-                      src={product.thumbnail}
-                      alt={product.title}
+                      src={el.thumbnail}
+                      alt={el.title}
                       mx="auto"
                       mb={4}
                       boxSize="150px"
@@ -132,14 +137,14 @@ const CategoryPage = () => {
                       borderRadius="md"
                     />
                     <Heading as="h3" size="md" mb={2}>
-                      {product.title}
+                      {el.title}
                     </Heading>
                   </Link>
                   <Text fontSize="sm" color="gray.600" mb={2}>
-                    {product.description}
+                    {el.description}
                   </Text>
                   <Text fontWeight="bold" color="teal.500" mb={2}>
-                    Price: ${product.price}
+                    Price: ${el.price}
                   </Text>
                   <HStack justify="center" mt={4}>
                     <Tooltip
@@ -150,7 +155,7 @@ const CategoryPage = () => {
                     >
                       <Button
                         colorScheme="teal"
-                        onClick={handleAddToCart}
+                        onClick={()=>handleAddToCart(el)}
                         size="sm"
                       >
                         Add to Cart
@@ -164,7 +169,7 @@ const CategoryPage = () => {
                     >
                       <Button
                         colorScheme="pink"
-                        onClick={handleAddToWishlist}
+                        onClick={()=>handleAddToWishlist(el)}
                         size="sm"
                       >
                         Add to Wishlist
@@ -179,9 +184,10 @@ const CategoryPage = () => {
             <HStack mt={4} spacing={2} justify="center">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <Button
+                _hover={{ color: "black", bg: "#008AD8" }}
                   key={index + 1}
                   onClick={() => handlePageChange(index + 1)}
-                  colorScheme={currentPage === index + 1 ? "teal" : "gray"}
+                  colorScheme={currentPage === index + 1 ? "teal" : "pink"}
                 >
                   {index + 1}
                 </Button>

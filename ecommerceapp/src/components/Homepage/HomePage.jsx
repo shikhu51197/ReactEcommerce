@@ -7,13 +7,48 @@ import {
   HStack,
   chakra,
   Heading,
+  Step,
+  StepIndicator,
+  StepStatus,
+  Stepper,
+  StepTitle,
+  StepDescription,
+  StepSeparator,
+  StepNumber,
+  StepIcon,
+  useSteps,
 } from "@chakra-ui/react";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import React, { useState } from "react";
 import logo1 from "../../Image/Shopping during Covid.png";
 import logo2 from "../../Image/home.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
+const AnimatedText = motion(Text);
 const HomePage = () => {
+  const steps = [
+    {
+      title: "First",
+      description: "Electronics",
+      image: "https://source.unsplash.com/random/400x300?smartphone",
+    },
+    {
+      title: "Second",
+      description: "Accessories",
+      image: "https://source.unsplash.com/random/400x300?earbuds",
+    },
+    {
+      title: "Third",
+      description: "Clothing",
+      image: "https://source.unsplash.com/random/400x300?tshirt",
+    },
+  ];
+
+  const { activeStep } = useSteps({
+    initialStep: 0,
+    steps,
+  });
   const arrowStyles = {
     cursor: "pointer",
     pos: "absolute",
@@ -49,16 +84,6 @@ const HomePage = () => {
       description:
         "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
     },
-    {
-      img: "https://images.unsplash.com/photo-1511556820780-d912e42b4980?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFjY2Vzc29yaWVzfGVufDB8fDB8fHww",
-      label: "Accessories",
-      description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
-    },
-    {
-      img: "https://images.unsplash.com/3/www.madebyvadim.com.jpg?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWNjZXNzb3JpZXN8ZW58MHx8MHx8fDA%3D",
-      label: "Combos",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -82,16 +107,9 @@ const HomePage = () => {
   };
   return (
     <>
-      <Flex
-        w="full"
-        gap={20}
-        p={10}
-        alignItems="center"
-        justifyContent="center"
-        mt={100}
-      >
-        <Flex w="60%" pos="relative" overflow="hidden" borderRadius={200}>
-          <Flex h="400px" w="full" {...carouselStyle}>
+      <Flex w="full" alignItems="center" justifyContent="center">
+        <Flex w="full" pos="relative" overflow="hidden">
+          <Flex h="550px" w="full" {...carouselStyle}>
             {slides.map((slide, sid) => (
               <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
                 <Text
@@ -151,28 +169,88 @@ const HomePage = () => {
             ))}
           </HStack>
         </Flex>
-        <Box
-          width="40%"
-          p={10}
-          boxShadow="rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
-          borderRadius={200}
+      </Flex>
+      <Box mt="40px">
+        <AnimatedText
+          fontSize={{ base: "lg", md: "2xl" }}
+          fontWeight="bold"
+          color="teal.500"
+          textAlign="center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <Image src={logo1} borderRadius={10} width="100%" />
+          Welcome to Our Website!
+        </AnimatedText>
+        <Text fontSize={{ base: "md", md: "lg" }} mt={4}>
+          Explore our amazing products and discover the latest trends in
+          electronics and fashion.
+        </Text>
+      </Box>
+
+      <Flex w="full" p={10}>
+        <Box
+          width={{ base: "100%", md: "50%" }}
+          p={10}
+          mt={{ base: 8, md: 100 }}
+          borderRadius={{ base: 0, md: 200 }}
+        >
+          <Stepper
+            ml={150}
+            mt={4}
+            index={activeStep}
+            orientation="vertical"
+            height="600px"
+            gap="0"
+          >
+            {steps.map((step, index) => (
+              <Step key={index}>
+                <StepIndicator>
+                  <StepStatus complete={`✅`} incomplete={`😅`} active={`📍`} />
+                </StepIndicator>{" "}
+                <FaArrowRight />
+                <Box flexShrink="0">
+                  <StepTitle>{step.title}</StepTitle>
+                  <StepDescription>{step.description}</StepDescription>
+                </Box>{" "}
+                <img
+                  src={step.image}
+                  alt={`Step ${index + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "100px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <StepSeparator /> <FaArrowLeft />
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+        <Box
+          boxShadow="rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
+          width={{ base: "100%", md: "50%" }}
+          
+          mt={{ base: 8, md: 100 }}
+          borderRadius={{ base: 0, md: 200 }}
+        >
+          <Image src={logo1} borderRadius={10} h="700px" width="100%" />
         </Box>
       </Flex>
+
       <Flex
         color="BLue"
         direction="column"
         align="center"
         justify="center"
-        mt={8}
+        mt={20}
       >
         <Heading>List Of Product Categories</Heading>
         <Image src={logo2} borderRadius={10} width="20%" />
       </Flex>
 
       <Flex p={50} w="full" alignItems="center" justifyContent="center">
-        <Link to="/category">
+        <Link to="/category/electronics">
           <Flex p={50} w="full" alignItems="center" justifyContent="center">
             <Flex
               direction="column"
@@ -226,7 +304,7 @@ const HomePage = () => {
             </Flex>
           </Flex>
         </Link>
-        <Link to="/category">
+        <Link to="/category/clothing">
           <Flex p={50} w="full" alignItems="center" justifyContent="center">
             <Flex
               direction="column"
@@ -281,7 +359,7 @@ const HomePage = () => {
           </Flex>
         </Link>
 
-        <Link to="/category">
+        <Link to="/category/accessories">
           <Flex p={50} w="full" alignItems="center" justifyContent="center">
             <Flex
               direction="column"

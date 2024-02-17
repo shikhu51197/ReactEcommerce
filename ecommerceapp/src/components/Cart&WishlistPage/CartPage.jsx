@@ -20,7 +20,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-
+  console.log('cart',cartItems)
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartItems(storedCartItems);
@@ -57,16 +57,16 @@ const CartPage = () => {
   };
 
   return (
-    <Box p={10} mx="auto" mt={90} width="80%">
+    <Box p={10} mx="auto" mt={90}  width="80%">
       <Flex direction="row" align="center" justify="center" mt={8}>
         <Heading fontSize="3xl" marginLeft="100px">
           My Cart
         </Heading>
-        <Image src={head} alt="head" width="10%" borderRadius={20} />
+        <Image src={head} alt="head" width="10%" borderRadius={20} ml='10px'/>
       </Flex>
 
       {cartItems.length > 0 ? (
-        <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" gap={6}>
+        <Grid templateColumns="repeat(auto-fill, minmax(300px, 1fr))" mt={10} gap={6}>
           {cartItems.map((item, index) => (
             <GridItem key={index}>
               <Box
@@ -111,6 +111,7 @@ const CartPage = () => {
           gap={"20px"}
           width={"100%"}
           margin="auto"
+          mt={8}
           display="flex"
           flexDirection={"Column"}
           justifyContent="center"

@@ -15,12 +15,13 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 const Navbar = () => {
   const [user, setUser] = useState(null);
   const { isOpen } = useDisclosure();
-
+  const isLogined = localStorage.getItem("user");
   const handleLogout = () => {
     const data = localStorage.removeItem("user");
 
     console.log(data);
     setUser(null);
+    window.location.reload();
   };
 
   return (
@@ -72,7 +73,22 @@ const Navbar = () => {
         display={{ base: isOpen ? "block" : "none", md: "block" }}
         mt={{ base: 4, md: 0 }}
       >
-        {user !== null ? (
+        {isLogined ? (
+          <>
+            <Button
+              onClick={handleLogout}
+              variant="outline"
+              bg="#001440"
+              color="white"
+              mr={2}
+              mt={{ base: 4, md: 0 }}
+              _hover={{ color: "black", bg: "#008AD8" }}
+            >
+              Logout
+            </Button>
+            <Text>{user}</Text>
+          </>
+        ) : (
           <>
             <RouterLink to="/signup">
               <Button
@@ -98,21 +114,6 @@ const Navbar = () => {
                 Login
               </Button>
             </RouterLink>
-          </>
-        ) : (
-          <>
-            <Button
-              onClick={handleLogout}
-              variant="outline"
-              bg="#001440"
-              color="white"
-              mr={2}
-              mt={{ base: 4, md: 0 }}
-              _hover={{ color: "black", bg: "#008AD8" }}
-            >
-              Logout
-            </Button>
-            <Text>{user}</Text>
           </>
         )}
       </Box>
