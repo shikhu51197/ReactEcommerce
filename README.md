@@ -1,12 +1,21 @@
 
 # ✨PROJECT NAME --> ❤️‍🔥❤️‍🔥 Interactive Product Catalog Web Application ❤️‍🔥❤️‍🔥:-
 
-     https://react-ecommerce-livid-nine.vercel.app/
-     
-# Json-Server Deploy Link :-
+ 
 
-     https://ecoapp-json.onrender.com/products
+[![Json-Server Deploy Link ](https://img.shields.io/badge/JsonServer-Deploy-Link-0A66C2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ecoapp-json.onrender.com/products)
 
+[![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://react-ecommerce-livid-nine.vercel.app/)
+
+---
+## 🔗 Profile Links✨
+
+
+| Resume | Github                                                                                                                                   | Linkedin                                                                                                                                                            | Portfolio                                                                                                                                    | Blogger                                                                                                                                                           | Medium                                                                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![Resume](https://img.shields.io/badge/my_Resume-E75480?style=for-the-badge&logo=ko-fi&logoColor=white)](https://drive.google.com/file/d/1YE62u2ChjmlR-EKeqZ75UvFMg_KcY86T/view?usp=sharing) | [![github](https://img.shields.io/badge/github-1DA1F2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shikhu51197/)| [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shikha-gupta-12a2b5199) |[![portfolio](https://img.shields.io/badge/my_portfolio-18A303?style=for-the-badge&logo=ionic&logoColor=white)](https://shikhu51197.github.io/) |[![Blogger](https://img.shields.io/badge/Blogger-FE5A1D?style=for-the-badge&logo=Blogger&logoColor=white)](https://wwwartificial-intelligence.blogspot.com/) |[![Medium](https://img.shields.io/badge/Medium-000?style=for-the-badge&logo=Medium&logoColor=white)](https://medium.com/@sg780060) |  
+
+---
      
 # Objective ❤️‍🔥:-
 
@@ -16,32 +25,45 @@ Develop an interactive product catalog web application using React.js and associ
 
 # Features❤️‍🔥:-
 
-     1. Responsive Design
-     Our application boasts a responsive design, ensuring a seamless and user-friendly experience across a diverse range of devices, be it desktop or mobile.
-     2. Homepage
-     Present users with an engaging display of product categories, complete with enticing thumbnail images and informative titles.
-     Simplify navigation by allowing users to click on a category of interest, seamlessly directing them to a page showcasing products within that specific category.
-     3. Category Page
-     Showcase products within the selected category using a visually appealing and responsive grid layout.
-     Each product is accompanied by a captivating thumbnail image, a concise title, a brief yet informative description, and its corresponding price.
-     Enhance user experience with filtering options for sorting products based on various criteria such as price, popularity, and more.
-     For categories with an extensive product range, facilitate easy navigation through the implementation of pagination.
-     4. Product Details Page
-     Offer users an immersive experience by providing comprehensive details about the selected product.
-     Showcase larger images, an in-depth product description, specifications, and, when available, related products.
-     Elevate user interaction by introducing a popup displaying related products upon clicking the "View Details" option.
-     Enable users to seamlessly add the product to their cart or wishlist for a convenient shopping experience.
-     5. Cart/Wishlist
-     Provide users with a dedicated space to manage their shopping activities, where they can effortlessly view, add, remove items, update quantities, and clear their cart or wishlist.
-     6. Animations and Transitions
-     Elevate the overall user experience through the implementation of smooth transitions and animations using Chakra UI components.
-     Integrate animations for page transitions, creating an engaging and visually appealing browsing experience. Implement hover effects on product thumbnails and other interactive elements to enhance user engagement.
-     7. Chakra UI Components
-     Harness the power of Chakra UI's extensive component library, including Flex, Box, Grid, Heading, Image, and more, to create a consistent, visually appealing design.
-     Leverage Chakra UI's theming capabilities, facilitating easy customization and ensuring a cohesive visual identity throughout the application.
-     8. Bonus Features (Optional)
-     Go above and beyond with advanced animations, such as parallax scrolling and interactive elements, seamlessly integrating Chakra UI with additional animation libraries for a visually stunning experience.
-     Enhance user convenience by implementing user authentication and enabling persistent cart/wishlist storage using local storage or a backend service.
+# Responsive Design:
+
+    Ensures a seamless experience across devices for user-friendly interactions.
+
+# Homepage:
+
+     Displays categories with thumbnails.
+     Allows quick navigation to category-specific product pages.
+
+# Category Page:
+
+     Utilizes a responsive grid layout for product display.
+     Provides filtering options and pagination for user convenience.
+     
+# Product Details Page:
+
+     Offers detailed product information.
+     Introduces related products in a popup.
+     Enables easy addition to cart or wishlist.
+     
+# Cart/Wishlist:
+
+     Allows users to manage items with basic functionalities.
+     Supports adding/removing items, updating quantities, and clearing the cart/wishlist.
+     
+# Animations and Transitions:
+
+     Implements smooth transitions and animations for a polished user experience.
+     Includes hover effects on product thumbnails for interactivity.
+     
+# Chakra UI Components:
+
+     Leverages Chakra UI components for a visually consistent design.
+     Utilizes theming capabilities for easy customization.
+     
+# Bonus Features (Optional):
+
+     Integrates advanced animations like parallax scrolling.
+     Supports user authentication and persistent cart/wishlist storage.
 
 ----
 
@@ -86,6 +108,16 @@ Start the development server:-
 Deployed Application:-
 
       The live version of the application is deployed on Netlify/Vercel.
+
+---
+    
+Contributing
+
+     💻 Contributions are welcome! Please follow the standard guidelines for contributing.
+---
+
+
+<h1 align="center">✨Thank You✨</h1>
 
 
 # Overall Impression ❤️‍🔥: 
