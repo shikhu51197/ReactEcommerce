@@ -23,48 +23,31 @@ Develop an interactive product catalog web application using React.js and associ
 ---
 
 
-# Features❤️‍🔥:-
-
-# Responsive Design:
-
-    Ensures a seamless experience across devices for user-friendly interactions.
-
-# Homepage:
-
-     Displays categories with thumbnails.
-     Allows quick navigation to category-specific product pages.
-
-# Category Page:
-
-     Utilizes a responsive grid layout for product display.
-     Provides filtering options and pagination for user convenience.
+## Features ✨:-
+---
+ | Serial No            | Feature                                                              |
+| ----------------- | ------------------------
+| 1 | User Signup and login, logout, navbar, footer|
+| 2 | Home Page Design, responsive design |
+| 3 |  Displays categories with thumbnails. |
+| 4 | Allows quick navigation to category-specific product pages. |
+| 5 |  Displays categories with thumbnails. |
+| 6 | Utilizes a responsive grid layout for product display. |
+| 7 |   Provides filtering options and pagination for user convenience. |
+| 8 |  Offers detailed product information.|
+| 9 |   Introduces related products in a popup. |
+| 10 | Enables easy addition to cart or wishlist. |
+| 11 |   Provides filtering options and pagination for user convenience. |
+| 12 | Allows users to manage items with basic functionalities. |
+| 13|   Supports adding/removing items, updating quantities, and clearing the cart/wishlist. |
+| 14 | Implements smooth transitions and animations for a polished user experience. |
+| 15|    Includes hover effects on product thumbnails for interactivity.|
+| 16 |Leverages Chakra UI components for a visually consistent design. |
+| 17 |   Utilizes theming capabilities for easy customization. |
+| 18 | Integrates advanced animations like parallax scrolling. |
+| 19 |   Supports user authentication and persistent cart/wishlist storage. |     
+| 20 |   User Friendly decent ui  | 
      
-# Product Details Page:
-
-     Offers detailed product information.
-     Introduces related products in a popup.
-     Enables easy addition to cart or wishlist.
-     
-# Cart/Wishlist:
-
-     Allows users to manage items with basic functionalities.
-     Supports adding/removing items, updating quantities, and clearing the cart/wishlist.
-     
-# Animations and Transitions:
-
-     Implements smooth transitions and animations for a polished user experience.
-     Includes hover effects on product thumbnails for interactivity.
-     
-# Chakra UI Components:
-
-     Leverages Chakra UI components for a visually consistent design.
-     Utilizes theming capabilities for easy customization.
-     
-# Bonus Features (Optional):
-
-     Integrates advanced animations like parallax scrolling.
-     Supports user authentication and persistent cart/wishlist storage.
-
 ----
 
 # Tech Stack ❤️‍🔥:-
@@ -88,6 +71,7 @@ React Router: For handling navigation in the application.
 ----
 
 # Getting Started ❤️‍🔥:-
+
 Clone the repository:-
 
     git clone https://github.com/your-username/product-catalog.git
@@ -110,18 +94,30 @@ Deployed Application:-
       The live version of the application is deployed on Netlify/Vercel.
 
 ---
-    
+
+## Flow
+
+```mermaid
+graph TD;
+ App-->HomePage
+HomePage-->SignupPage
+HomePage-->LoginPage
+HomePage--> CategoryPage
+HomePage--> CartPage
+HomePage-->  WishListPage
+SignupPage--> LoginPage
+CategoryPage-->ProductDetailPage
+ProductDetailPage-->RelatedProductPage
+ProductDetailPage-->CartPage
+ProductDetailPage-->WishListPage
+WishListPage-->HomePage
+CartPage --> HomePage
+```
+
 Contributing
 
      💻 Contributions are welcome! Please follow the standard guidelines for contributing.
 ---
 
-
-<h1 align="center">✨Thank You✨</h1>
-
-
-# Overall Impression ❤️‍🔥: 
-
-      How well does the candidate's submission demonstrate their frontend development skills and creativity?
 
 <h1 align = "center">❤️‍🔥 THANK YOU ❤️‍🔥</h1>
