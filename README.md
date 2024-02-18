@@ -3,7 +3,7 @@
 
  
 
-[![Json-Server Deploy Link ](https://img.shields.io/badge/JsonServer-Deploy-Link-0A66C2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ecoapp-json.onrender.com/products)
+[![Json-Server Deploy Link ](https://img.shields.io/badge/JsonServer-0A66C2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ecoapp-json.onrender.com/products)
 
 [![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://react-ecommerce-livid-nine.vercel.app/)
 
