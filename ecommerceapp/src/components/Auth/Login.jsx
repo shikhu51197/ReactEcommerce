@@ -9,6 +9,7 @@ import {
   Text,
   useToast,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -57,14 +58,15 @@ const Login = () => {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
-        <Box display="flex" width="100%" mt={120}>
-          <Box width="50%" mt="50px" p={10}>
+        <Flex direction={{ base: "column", md: "row" }} width="100%" mt={120}>
+          <Box width={{ base: "100%", md: "50%" }} mt="50px" p={10}>
             <Image src={logo1} borderRadius={10} width="100%" />
           </Box>
-          <Box width="70%">
+          <Box width={{ base: "100%", md: "50%" }}>
             <form
               onSubmit={handleFormSubmission}
               style={{
+                
                 width: "50%",
                 margin: "auto",
                 padding: "40px",
@@ -111,7 +113,7 @@ const Login = () => {
               </Stack>
             </form>
           </Box>
-        </Box>
+        </Flex>
       </motion.div>
     </>
   );

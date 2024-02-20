@@ -8,13 +8,19 @@ import {
   Image,
   useDisclosure,
   Text,
+  IconButton,
 } from "@chakra-ui/react";
 
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart , FaBars} from "react-icons/fa";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
-  const { isOpen } = useDisclosure();
+  // const { isOpen } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen)
+  };
   const isLogined = localStorage.getItem("user");
   const handleLogout = () => {
     const data = localStorage.removeItem("user");
@@ -31,7 +37,7 @@ const Navbar = () => {
       justify="space-between"
       bg="white"
       color="black"
-      fontSize="18px"
+      fontSize={{ base: "16px", md: "18px" }}
       position="fixed"
       top="0"
       left="0"
@@ -39,20 +45,25 @@ const Navbar = () => {
       zIndex="999"
       transition="background-color 0.3s, padding 0.3s"
       p={{ base: "1", md: "2" }}
-      pl={{ base: "5", md: "10" }}
-      pr={{ base: "5", md: "10" }}
+      pl={{ base: "3", md: "10" }}
+      pr={{ base: "3", md: "10" }}
       wrap="wrap"
       w="100%"
     >
       <Flex cursor="pointer" flexDirection="row" align="center">
         <RouterLink to="/">
-          <Image src={logo} alt="Logo" boxSize="70px" />
+          <Image src={logo} alt="Logo" boxSize={{ base: "50px", md: "70px" }} />
         </RouterLink>
       </Flex>
+
+      <Box display={{ base: "block", md: "none" }} mt={{ base: 2, md: 0 }}>
+        <IconButton icon={<FaBars />} size="md" onClick={handleToggle} />
+      </Box>
       <Box
         display={{ base: isOpen ? "block" : "none", md: "flex" }}
         width={{ base: "full", md: "auto" }}
         alignItems="center"
+        mt={{ base: 4, md: 0 }}
       >
         <Flex flexDirection="column" align="center" color="#001440">
           <Text mt={{ base: 4, md: 0 }} mr="50px">

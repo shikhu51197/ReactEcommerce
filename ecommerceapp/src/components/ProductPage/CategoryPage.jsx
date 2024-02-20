@@ -101,7 +101,7 @@ const CategoryPage = () => {
         <Image src={head} alt="head" width="20%" borderRadius={20} />
       </Flex>
 
-      <HStack p={4} spacing={4} justify="center">
+      <HStack p={4} spacing={4} justify="center"  >
         <Button bg="#001440" color='white'  _hover={{ color: "black", bg: "#008AD8" }} onClick={() => handleSort("popularity")}>
           Sort by Popularity
         </Button>

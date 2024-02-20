@@ -170,7 +170,7 @@ const HomePage = () => {
           </HStack>
         </Flex>
       </Flex>
-      <Box mt="40px">
+      <Box mt={{ base: 4, md: 40 }}>
         <AnimatedText
           fontSize={{ base: "lg", md: "2xl" }}
           fontWeight="bold"
@@ -188,15 +188,19 @@ const HomePage = () => {
         </Text>
       </Box>
 
-      <Flex w="full" p={10}>
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        w="full"
+        p={{ base: 10, md: 10 }}
+      >
         <Box
           width={{ base: "100%", md: "50%" }}
-          p={10}
+          p={{ base: 4, md: 10 }}
           mt={{ base: 8, md: 100 }}
           borderRadius={{ base: 0, md: 200 }}
         >
           <Stepper
-            ml={150}
+            // ml={150}
             mt={4}
             index={activeStep}
             orientation="vertical"
@@ -230,28 +234,51 @@ const HomePage = () => {
         <Box
           boxShadow="rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset"
           width={{ base: "100%", md: "50%" }}
-          
           mt={{ base: 8, md: 100 }}
           borderRadius={{ base: 0, md: 200 }}
         >
-          <Image src={logo1} borderRadius={10} h="700px" width="100%" />
+          <Image
+            src={logo1}
+            borderRadius={10}
+            h={{ base: "300px", md: "700px" }}
+            width="100%"
+          />
         </Box>
       </Flex>
 
       <Flex
-        color="BLue"
+        color="blue"
         direction="column"
         align="center"
         justify="center"
-        mt={20}
+        mt={{ base: 10, md: 20 }}
       >
-        <Heading>List Of Product Categories</Heading>
-        <Image src={logo2} borderRadius={10} width="20%" />
+        <Heading fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}>
+          List Of Product Categories
+        </Heading>
+
+        <Image
+          src={logo2}
+          borderRadius={10}
+          width={{ base: "50%", md: "30%", lg: "20%" }}
+          mt={4}
+        />
       </Flex>
 
-      <Flex p={50} w="full" alignItems="center" justifyContent="center">
+      <Flex
+        direction={["column", "column", "column", "row"]}
+        p={30}
+        w="full"
+        alignItems="center"
+        justifyContent="center"
+      >
         <Link to="/category/electronics">
-          <Flex p={50} w="full" alignItems="center" justifyContent="center">
+          <Flex
+            p={50}
+            w="full"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Flex
               direction="column"
               justifyContent="center"
@@ -305,7 +332,12 @@ const HomePage = () => {
           </Flex>
         </Link>
         <Link to="/category/clothing">
-          <Flex p={50} w="full" alignItems="center" justifyContent="center">
+          <Flex
+            p={50}
+            w="full"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Flex
               direction="column"
               justifyContent="center"
@@ -360,7 +392,12 @@ const HomePage = () => {
         </Link>
 
         <Link to="/category/accessories">
-          <Flex p={50} w="full" alignItems="center" justifyContent="center">
+          <Flex
+            p={50}
+            w="full"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Flex
               direction="column"
               justifyContent="center"
