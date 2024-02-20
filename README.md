@@ -1,56 +1,57 @@
 
 # ✨PROJECT NAME --> ❤️‍🔥❤️‍🔥 Interactive Product Catalog Web Application ❤️‍🔥❤️‍🔥:-
 
-     https://react-ecommerce-livid-nine.vercel.app/
+ 
+
+[![Json-Server Deploy Link ](https://img.shields.io/badge/JsonServer-0A66C2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ecoapp-json.onrender.com/products)
+
+[![Deployed App Vercel Link](https://img.shields.io/badge/Deployed_App_Vercel_Link-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://react-ecommerce-livid-nine.vercel.app/)
+
+---
+## 🔗 Profile Links✨
+
+
+| Resume | Github                                                                                                                                   | Linkedin                                                                                                                                                            | Portfolio                                                                                                                                    | Blogger                                                                                                                                                           | Medium                                                                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![Resume](https://img.shields.io/badge/my_Resume-E75480?style=for-the-badge&logo=ko-fi&logoColor=white)](https://drive.google.com/file/d/1YE62u2ChjmlR-EKeqZ75UvFMg_KcY86T/view?usp=sharing) | [![github](https://img.shields.io/badge/github-1DA1F2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shikhu51197/)| [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shikha-gupta-12a2b5199) |[![portfolio](https://img.shields.io/badge/my_portfolio-18A303?style=for-the-badge&logo=ionic&logoColor=white)](https://shikhu51197.github.io/) |[![Blogger](https://img.shields.io/badge/Blogger-FE5A1D?style=for-the-badge&logo=Blogger&logoColor=white)](https://wwwartificial-intelligence.blogspot.com/) |[![Medium](https://img.shields.io/badge/Medium-000?style=for-the-badge&logo=Medium&logoColor=white)](https://medium.com/@sg780060) |  
+
+---
      
 # Objective ❤️‍🔥:-
 
 Develop an interactive product catalog web application using React.js and associated libraries to showcase various products. The application allows users to browse through different categories of products, view details of each product, and includes animations/transitions for an enhanced user experience.
 ---
 
-# Requirements ❤️‍🔥:-
 
-# Homepage:-
-Display a list of product categories with thumbnail images and titles.
-
-Clicking on a category should navigate the user to a page displaying products within that category.
-
-# Category Page:-
-Display all products within the selected category.
-
-Each product should have a thumbnail image, title, brief description, and price.
-
-Include filtering options to sort products by price, popularity, etc.
-
-Implement pagination if there are many products in a category.
-
-# Product Details Page:-
-Show detailed information about the selected product.
-
-Include larger images, a detailed description, specifications, and related products (if available).
-
-Allow users to add the product to their cart or wishlist.
-
-# Cart/Wishlist:-
-Users can view their cart and wishlist.
-
-Implement basic functionalities like adding/removing items, updating quantities, and clearing the cart/wishlist.
-
-# Animations and Transitions:
-
-Implement smooth transitions/animations using libraries like Framer Motion, GSAP, or other animation libraries.
-
-Use animations for page transitions, hover effects on product thumbnails, and any other areas to enhance the user experience.
-
-# Bonus Features (Optional):-
-Implement responsive design for mobile and tablet devices.
-
-Add functionality for user authentication and persistent cart/wishlist storage using local storage or any backend service.
-
-Incorporate advanced animations such as parallax scrolling, interactive elements, etc.
-
+## Features ✨:-
+---
+ | Serial No            | Feature                                                              |
+| ----------------- | ------------------------
+| 1 | User Signup and login, logout, navbar, footer|
+| 2 | Home Page Design, responsive design |
+| 3 |  Displays categories with thumbnails. |
+| 4 | Allows quick navigation to category-specific product pages. |
+| 5 |  Displays categories with thumbnails. |
+| 6 | Utilizes a responsive grid layout for product display. |
+| 7 |   Provides filtering options and pagination for user convenience. |
+| 8 |  Offers detailed product information.|
+| 9 |   Introduces related products in a popup. |
+| 10 | Enables easy addition to cart or wishlist. |
+| 11 |   Provides filtering options and pagination for user convenience. |
+| 12 | Allows users to manage items with basic functionalities. |
+| 13|   Supports adding/removing items, updating quantities, and clearing the cart/wishlist. |
+| 14 | Implements smooth transitions and animations for a polished user experience. |
+| 15|    Includes hover effects on product thumbnails for interactivity.|
+| 16 |Leverages Chakra UI components for a visually consistent design. |
+| 17 |   Utilizes theming capabilities for easy customization. |
+| 18 | Integrates advanced animations like parallax scrolling. |
+| 19 |   Supports user authentication and persistent cart/wishlist storage. |     
+| 20 |   User Friendly decent ui  | 
+     
 ----
+
 # Tech Stack ❤️‍🔥:-
+
 React.js: JavaScript library for building user interfaces.
 
 Framer Motion/GSAP: Animation libraries for smooth transitions.
@@ -58,7 +59,9 @@ Framer Motion/GSAP: Animation libraries for smooth transitions.
 Other Libraries: Any additional libraries used for state management, routing, etc.
 
 ---
+
 # Packages Used ❤️‍🔥:-
+
 Create React App: Bootstrapping React applications.
 
 Framer Motion/GSAP: Animation libraries.
@@ -68,6 +71,7 @@ React Router: For handling navigation in the application.
 ----
 
 # Getting Started ❤️‍🔥:-
+
 Clone the repository:-
 
     git clone https://github.com/your-username/product-catalog.git
@@ -89,25 +93,31 @@ Deployed Application:-
 
       The live version of the application is deployed on Netlify/Vercel.
 
-# Submission Guidelines ❤️‍🔥:-
+---
 
-    Provide the public GitHub repository link in the Google Form attached in the mail.
-    Include a README file.
-    Deploy the application to a hosting platform (e.g., Netlify, Vercel) and provide the live link along with the repository link.
+## Flow
 
-# Evaluation Criteria ❤️‍🔥:-
+```mermaid
+graph TD;
+ App-->HomePage
+HomePage-->SignupPage
+HomePage-->LoginPage
+HomePage--> CategoryPage
+HomePage--> CartPage
+HomePage-->  WishListPage
+SignupPage--> LoginPage
+CategoryPage-->ProductDetailPage
+ProductDetailPage-->RelatedProductPage
+ProductDetailPage-->CartPage
+ProductDetailPage-->WishListPage
+WishListPage-->HomePage
+CartPage --> HomePage
+```
 
-        Functionality: Does the application meet the specified requirements? Is it fully functional without errors?
-        Code Quality: Is the code well-structured, clean, and maintainable? Are best practices followed?
-        User Experience: Are animations/transitions implemented effectively to enhance the user interface? Is the application 
-        intuitive and easy to navigate?
-        
-# Bonus Features ❤️‍🔥: 
+Contributing
 
-     If bonus features are implemented, are they well-executed and add value to the application?
+     💻 Contributions are welcome! Please follow the standard guidelines for contributing.
+---
 
-# Overall Impression ❤️‍🔥: 
-
-      How well does the candidate's submission demonstrate their frontend development skills and creativity?
 
 <h1 align = "center">❤️‍🔥 THANK YOU ❤️‍🔥</h1>
